@@ -6,6 +6,8 @@ An iron condor is an options trading strategy. It sells a put below the price an
 
 ## Demo
 
+**Live demo:** https://stevenstoyanov12-aimbot.github.io/btc-condor-backtest/demo/
+
 `demo/index.html` is an interactive version of the main backtest. Open it in a browser, change the exit rules and it reruns the whole backtest on the same data, with the price chart, every trade and the cumulative P&L.
 
 ## How the backtest works
