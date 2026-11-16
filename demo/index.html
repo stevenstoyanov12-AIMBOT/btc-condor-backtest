@@ -161,9 +161,9 @@ fill("exd",EXD,function(v){return v?v.toFixed(2):"None";});
 fill("tp",TP,function(v){return Math.round(v*100)+"% of credit";});
 fill("cd",CD,function(v){return v?v+" days":"None";});
 
-// the same grid the Python script searches, ranked by average P&L per trade
+// every rule set the controls offer, ranked by average P&L per trade
 var best=null,tested=0;
-EXD.forEach(function(e){TP.forEach(function(p){if(e&&p>.5)return;CD.forEach(function(c){
+EXD.forEach(function(e){TP.forEach(function(p){CD.forEach(function(c){
   var s=stats(runBacktest(C,V,.12,e,p,c));tested++;
   if(s.n>=10&&(!best||s.per>best.per))best={e:e,p:p,c:c,per:s.per};});});});
 function setBest(){$("exd").value=best.e;$("tp").value=best.p;$("cd").value=best.c;run();}
@@ -268,7 +268,8 @@ function drawTable(){
 $("range").textContent=n.toLocaleString("en-US")+" hourly BTC prices and daily DVOL, "+fmtDate(0)+" to "+fmtDate(n-1);
 ["exd","tp","cd"].forEach(function(id){$(id).addEventListener("change",run);});
 $("best").addEventListener("click",setBest);
-setBest();
+// opening rule set: 0.50 delta exit, 90% profit target, 14-day cooldown
+$("exd").value=.5;$("tp").value=.9;$("cd").value=14;run();
 })();
 </script>
 </body>
