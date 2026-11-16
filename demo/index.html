@@ -268,8 +268,8 @@ function drawTable(){
 $("range").textContent=n.toLocaleString("en-US")+" hourly BTC prices and daily DVOL, "+fmtDate(0)+" to "+fmtDate(n-1);
 ["exd","tp","cd"].forEach(function(id){$(id).addEventListener("change",run);});
 $("best").addEventListener("click",setBest);
-// opening rule set: 0.50 delta exit, 90% profit target, 14-day cooldown
-$("exd").value=.5;$("tp").value=.9;$("cd").value=14;run();
+// opens on the best rule set of the grid
+setBest();
 })();
 </script>
 </body>

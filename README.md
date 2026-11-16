@@ -22,8 +22,8 @@ An iron condor is an options trading strategy. It sells a put below the price an
 
 The win rate is high, but the losses are several times larger than the wins, so many rule sets end near flat or negative. Across the 312 rule sets the demo offers:
 
-- The best one (0.40 delta exit, 80% profit target, 7-day cooldown) made about $1,609 per 1 BTC of size over 35 trades, with a 74.3% win rate.
-- The one the demo opens on (0.50 delta exit, 90% profit target, 14-day cooldown) made about $1,272 over 32 trades, with a 71.9% win rate.
+- The best one, which the demo opens on (0.40 delta exit, 80% profit target, 7-day cooldown) made about $1,609 per 1 BTC of size over 35 trades, with a 74.3% win rate.
+- A close runner-up (0.50 delta exit, 90% profit target, 14-day cooldown) made about $1,272 over 32 trades, with a 71.9% win rate.
 - A typical middle setting (0.50 delta exit, 25% profit target, 7-day cooldown) lost about $244 over 70 trades.
 
 The best rule sets were chosen on the same data they were tested on, so they are a ceiling, not a forecast. Prices also come from a model with one volatility number per day, not from real option quotes.
